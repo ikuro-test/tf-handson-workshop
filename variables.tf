@@ -1,12 +1,10 @@
-
-variable "access_key" {}
-variable "secret_key" {}
-variable "region" {}
-variable "ami" {}
+variable "vm_size" {}
+variable "client_id" {}
+variable "client_secret" {}
+variable "tenant_id" {}
+variable "subscription_id" {}
+variable "location" {}
+variable "admin_password" {}
 variable "hello_tf_instance_count" {
-    default = 2
+    default = 1
 }
-variable "hello_tf_instance_type" {
-    default = "t2.micro"
-}
-
