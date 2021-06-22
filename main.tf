@@ -7,7 +7,6 @@ provider "azurerm" {
   tenant_id = var.tenant_id
   subscription_id = var.subscription_id
   client_secret = var.client_secret
-  features {}
 }
 
 resource "azurerm_virtual_machine" "main" {
@@ -25,6 +24,10 @@ resource "azurerm_virtual_machine" "main" {
   }
   os_profile_linux_config {
     disable_password_authentication = false
+  }
+  tags = {
+    owner = "me",
+    ttl   = "100"
   }
   storage_image_reference {
     publisher = "Canonical"
